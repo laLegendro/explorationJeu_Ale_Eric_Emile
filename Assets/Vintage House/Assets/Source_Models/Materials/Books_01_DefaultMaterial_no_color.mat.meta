@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bd86616773cf50b46a0a5f603497f909
+timeCreated: 1487152734
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Assets/Source_Models/Materials/Books_01_DefaultMaterial_no_color.mat
+  uploadId: 290989

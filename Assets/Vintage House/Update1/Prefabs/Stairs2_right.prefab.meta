@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 87053fd5c10034547b4ca0b0e614dfda
+timeCreated: 1506510284
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Update1/Prefabs/Stairs2_right.prefab
+  uploadId: 290989
