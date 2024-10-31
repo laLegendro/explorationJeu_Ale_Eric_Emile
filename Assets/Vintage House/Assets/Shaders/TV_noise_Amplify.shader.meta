@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b70a525be4a3e4d4ca0021dcb496ca07
+ShaderImporter:
+  externalObjects: {}
+  defaultTextures: []
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Assets/Shaders/TV_noise_Amplify.shader
+  uploadId: 290989

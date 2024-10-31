@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: eb234712e1cd4104a8c362cc9a886545
+timeCreated: 1505925862
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Update1/Models/Materials/Mirror3_a.mat
+  uploadId: 290989

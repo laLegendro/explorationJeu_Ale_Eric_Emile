@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 0a2557ad3ae1f1f44b95d8cf7560e8cf
+timeCreated: 1506610520
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Assets/Prefab_Wall/Ceiling_Panel_2A.prefab
+  uploadId: 290989
