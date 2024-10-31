@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e940f346d804e02488f7016b91923195
+timeCreated: 1507537542
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Update1/Prefabs/Paint2_11.prefab
+  uploadId: 290989

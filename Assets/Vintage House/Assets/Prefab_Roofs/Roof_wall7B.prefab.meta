@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9d013876081f1f6428efa9c6404fc2ba
+timeCreated: 1507566002
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Assets/Prefab_Roofs/Roof_wall7B.prefab
+  uploadId: 290989
