@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 9bb644855f2ea4e4698f49de3260e29a
+timeCreated: 1507040180
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Update1/Models/Materials/Curtain2_a.mat
+  uploadId: 290989

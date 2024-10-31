@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: e45b83b7916c40640bb0b19aba9fe6fb
+timeCreated: 1506447747
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Update1/Models/Materials/Stairs1_barrier.mat
+  uploadId: 290989

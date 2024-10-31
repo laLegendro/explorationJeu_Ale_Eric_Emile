@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 123a3bc22b5105247a9670993b3e6dfc
+timeCreated: 1506674959
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Update1/Models/Materials/Hand_of_clock_a.mat
+  uploadId: 290989

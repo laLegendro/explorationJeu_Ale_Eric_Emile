@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bd2761bdaa1091248b5c74f77868da99
+timeCreated: 1487510025
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Assets/Prefab_Roofs/Models/Materials/Roof_01.mat
+  uploadId: 290989

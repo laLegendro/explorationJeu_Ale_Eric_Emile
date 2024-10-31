@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 6275e58aacf4af249b6d82680e06af18
+timeCreated: 1502288886
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Assets/Prefab_Wall/Wall_03_int_window.prefab
+  uploadId: 290989

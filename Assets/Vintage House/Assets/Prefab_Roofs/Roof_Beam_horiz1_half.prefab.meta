@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: 7db8e1309406a2d4594ac09e5fc46add
+timeCreated: 1507627259
+licenseType: Store
+NativeFormatImporter:
+  mainObjectFileID: 100100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 98229
+  packageName: Vintage House
+  packageVersion: 1.3
+  assetPath: Assets/Vintage House/Assets/Prefab_Roofs/Roof_Beam_horiz1_half.prefab
+  uploadId: 290989
