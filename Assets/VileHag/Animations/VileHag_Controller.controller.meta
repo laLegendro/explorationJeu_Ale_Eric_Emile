@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 3a601df8cfe52344893f5375a9f16207
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 9100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 170436
+  packageName: Vile Hag - Horror character
+  packageVersion: 1.0
+  assetPath: Assets/VileHag/Animations/VileHag_Controller.controller
+  uploadId: 372767
