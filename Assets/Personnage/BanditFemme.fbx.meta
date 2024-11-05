@@ -1,5 +1,5 @@
 fileFormatVersion: 2
-guid: 2e6ac71a0435a5044a7302bd5efd70cc
+guid: 22f4b15dc86056d4b81652dc74ae68a4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
@@ -8,22 +8,22 @@ ModelImporter:
       type: UnityEngine:Material
       assembly: UnityEngine.CoreModule
       name: Peasant_Girl
-    second: {fileID: 2100000, guid: 9b2fd93be1333434b9e7a757e3cd51b3, type: 2}
+    second: {fileID: 2100000, guid: ced1f7eab8cb1a04e845882664bd815b, type: 2}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Peasant_Girl_diffuse
-    second: {fileID: 2800000, guid: 05a940c03ede649419f3732ecfb9d803, type: 3}
+    second: {fileID: 2800000, guid: 90432004ee36b5340b398e61c58a83f2, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Peasant_Girl_normal
-    second: {fileID: 2800000, guid: 2147d9bab5783754b90c052c64cb37f4, type: 3}
+    second: {fileID: 2800000, guid: 84febd55c4970604c9e9c46e87aaa887, type: 3}
   - first:
       type: UnityEngine:Texture2D
       assembly: UnityEngine.CoreModule
       name: Peasant_Girl_specular
-    second: {fileID: 2800000, guid: a593dd7e6ba094e4884d5951355a08b3, type: 3}
+    second: {fileID: 2800000, guid: b01d289e69da1114896c398df841f33f, type: 3}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -533,18 +533,18 @@ ModelImporter:
         length: 0
         modified: 0
     skeleton:
-    - name: Peasant Girl (1)(Clone)
+    - name: Peasant Girl (3)(Clone)
       parentName: 
       position: {x: 0, y: 0, z: 0}
       rotation: {x: 0, y: 0, z: 0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: Peasant_girl
-      parentName: Peasant Girl (1)(Clone)
+      parentName: Peasant Girl (3)(Clone)
       position: {x: -0, y: 0, z: 0}
       rotation: {x: 0, y: -0, z: -0, w: 1}
       scale: {x: 1, y: 1, z: 1}
     - name: mixamorig:Hips
-      parentName: Peasant Girl (1)(Clone)
+      parentName: Peasant Girl (3)(Clone)
       position: {x: 0.00000018206262, y: 1.1303803, z: 0.00095446035}
       rotation: {x: 5.0709074e-14, y: 0.00000006180133, z: -0.0000008205174, w: 1}
       scale: {x: 1, y: 1, z: 1}
