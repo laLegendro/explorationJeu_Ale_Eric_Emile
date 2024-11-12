@@ -1,0 +1,14 @@
+fileFormatVersion: 2
+guid: 4065378065d11ac40b039886c3f58df0
+PrefabImporter:
+  externalObjects: {}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 263259
+  packageName: Garbage Props
+  packageVersion: 1.0
+  assetPath: Assets/GarbageProps/prefabs/barrel.prefab
+  uploadId: 607549

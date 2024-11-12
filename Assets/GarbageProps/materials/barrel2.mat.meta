@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: 65e9763953413e9449b0214d008aaf23
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 263259
+  packageName: Garbage Props
+  packageVersion: 1.0
+  assetPath: Assets/GarbageProps/materials/barrel2.mat
+  uploadId: 607549
