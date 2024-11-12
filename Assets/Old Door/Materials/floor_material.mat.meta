@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: f5c3b8da4279ec34099da9bb36400ee2
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195372
+  packageName: Old Door
+  packageVersion: 1.0
+  assetPath: Assets/Old Door/Materials/floor_material.mat
+  uploadId: 433376
