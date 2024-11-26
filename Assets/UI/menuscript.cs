@@ -5,9 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class menuscript : MonoBehaviour
 {
-  // LOAD THE PROPER SCENE
+  // LOAD THE PROPER SCENE prendre la bonne scene pour jouer le jeu
   public void StartBtn()
     {
-        SceneManager.LoadScene("MainMenu");
+        SceneManager.LoadScene("SampleScene");
     }
 }
