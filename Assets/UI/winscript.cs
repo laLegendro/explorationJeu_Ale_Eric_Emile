@@ -4,12 +4,14 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public class defeatscript : MonoBehaviour
+public class winscript : MonoBehaviour
 {
+   
   // LOAD THE PROPER SCENE prendre la bonne scene pour jouer le jeu
-  // LOAD LE HUB PRINCIPAL MENU
+  // REPLAY SI TU WIN ANYWAYS similar avec script defeat
   public void StartBtn()
     {
         SceneManager.LoadScene("SampleScene_v2 avatar UI START");
     }
+
 }
