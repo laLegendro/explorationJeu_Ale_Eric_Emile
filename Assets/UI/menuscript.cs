@@ -9,6 +9,6 @@ public class menuscript : MonoBehaviour
   // NOMMER LA SCENE DE ALEJANDRO
   public void StartBtn()
     {
-        SceneManager.LoadScene("SampleScene");
+        SceneManager.LoadScene("SampleScene_V2 avatar UI WIN");
     }
 }
