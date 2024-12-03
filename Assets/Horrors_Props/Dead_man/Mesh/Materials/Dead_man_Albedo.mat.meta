@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bdc1b24422513cf45aa47408a8c12b78
+timeCreated: 1486718409
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 82700
+  packageName: Horror Props (pack)
+  packageVersion: 1.0
+  assetPath: Assets/Horrors_Props/Dead_man/Mesh/Materials/Dead_man_Albedo.mat
+  uploadId: 165437

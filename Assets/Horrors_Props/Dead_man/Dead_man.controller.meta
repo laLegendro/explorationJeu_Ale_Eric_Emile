@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: b07972d59989c9a4ea9a4f90c8c3abc0
+timeCreated: 1483372679
+licenseType: Store
+NativeFormatImporter:
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 82700
+  packageName: Horror Props (pack)
+  packageVersion: 1.0
+  assetPath: Assets/Horrors_Props/Dead_man/Dead_man.controller
+  uploadId: 165437
