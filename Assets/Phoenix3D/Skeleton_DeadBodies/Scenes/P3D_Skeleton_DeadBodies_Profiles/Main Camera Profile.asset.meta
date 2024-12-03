@@ -1,0 +1,16 @@
+fileFormatVersion: 2
+guid: c8967189f8a09fa46a98a587fcb71df7
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 11400000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 252379
+  packageName: 'P3D: Slaughtered Dead Bodies (Skeleton & Mummy & Burned Corpses)'
+  packageVersion: 1.0
+  assetPath: Assets/Phoenix3D/Skeleton_DeadBodies/Scenes/P3D_Skeleton_DeadBodies_Profiles/Main
+    Camera Profile.asset
+  uploadId: 605487
