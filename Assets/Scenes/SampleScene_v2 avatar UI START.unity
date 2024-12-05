@@ -23154,7 +23154,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ABOUT
+  m_text: INSTRUCTIONS
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bbdcbf7f8af8670439f7dfe1e6d13a06, type: 2}
   m_sharedMaterial: {fileID: -6823364505852673212, guid: bbdcbf7f8af8670439f7dfe1e6d13a06,
@@ -23182,8 +23182,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
-  m_fontSizeBase: 50
+  m_fontSize: 32
+  m_fontSizeBase: 32
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -24831,7 +24831,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY
+  m_text: JOUER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bbdcbf7f8af8670439f7dfe1e6d13a06, type: 2}
   m_sharedMaterial: {fileID: -6823364505852673212, guid: bbdcbf7f8af8670439f7dfe1e6d13a06,

@@ -21469,7 +21469,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PLAY AGAIN
+  m_text: REJOUER
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bbdcbf7f8af8670439f7dfe1e6d13a06, type: 2}
   m_sharedMaterial: {fileID: -6823364505852673212, guid: bbdcbf7f8af8670439f7dfe1e6d13a06,
