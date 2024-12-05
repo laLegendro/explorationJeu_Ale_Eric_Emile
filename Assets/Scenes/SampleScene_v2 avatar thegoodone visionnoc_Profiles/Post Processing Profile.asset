@@ -14,6 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settings:
   - {fileID: 1980365598148522553}
+  - {fileID: 0}
+  - {fileID: 0}
 --- !u!114 &1980365598148522553
 MonoBehaviour:
   m_ObjectHideFlags: 3
