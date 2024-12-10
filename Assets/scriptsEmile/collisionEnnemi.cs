@@ -19,14 +19,11 @@ public class collisionEnnemi : MonoBehaviour
 
     void OnTriggerEnter(Collider infoTrigger){
         Debug.Log("oki general");
-        // if (infoTrigger.name == "Wall_01_1 (48)")
-        // {
-        //     Debug.Log("oki");
-        // }
         
-        if (infoTrigger.name == "grandmere")
+        if (infoTrigger.name == "Capsule")
         {
-            finirPartie();
+            Debug.Log("oki");
+            // finirPartie();
         }
         
         if (infoTrigger.name == "camion")
