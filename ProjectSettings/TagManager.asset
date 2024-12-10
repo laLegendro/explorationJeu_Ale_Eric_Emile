@@ -25,6 +25,8 @@ TagManager:
   - QDSUITextInputField
   - QDSUIToggleCheckboxRadio
   - QDSUISection
+  - Porte
+  - Joueur
   layers:
   - Default
   - TransparentFX
