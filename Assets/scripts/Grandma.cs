@@ -46,11 +46,12 @@ public class Grandma : MonoBehaviour
     void Update()
     {
 
-
+        Animator.SetBool("Marche", true); // Active l'animation de course
         if (!Lennemi.pathPending && Lennemi.remainingDistance < 0.5f)
         {
             destination = destination == pointA ? pointB : pointA; // Changer la destination
             Lennemi.SetDestination(destination.position);
+           
 
 
 
