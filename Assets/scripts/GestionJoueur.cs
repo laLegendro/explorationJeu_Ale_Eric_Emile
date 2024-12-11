@@ -47,7 +47,7 @@ public class GestionJoueur : MonoBehaviour
             Invoke("RefermerPorte", 4f);
 
             // Désactiver le collider de la porte pour éviter des collisions répétées
-          //  PorteActuelle.GetComponent<Collider>().enabled = false;
+            PorteActuelle.GetComponent<Collider>().enabled = false;
         }
     }
 
