@@ -27,6 +27,7 @@ TagManager:
   - QDSUISection
   - Porte
   - Joueur
+  - Ennemi
   layers:
   - Default
   - TransparentFX

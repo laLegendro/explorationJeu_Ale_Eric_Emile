@@ -1,4 +1,3 @@
-using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -6,170 +5,131 @@ using UnityEngine.AI;
 
 public class Grandma : MonoBehaviour
 {
+    private NavMeshAgent Lennemi; // The enemy (grandma)
+    public Transform PersonnageCible; // The player (target)
+    private Animator Animator; // To control animations
+    private AudioSource AudioSource; // For sound effects
+    private GameObject PorteActuelle; // To handle doors when grandma touches a door
 
-    private NavMeshAgent Lennemi;//la grand mère
-    public Transform PersonnageCible;// le joueur
-    private Animator Animator;// aller cxercher l'animator
-    private AudioSource AudioSource;// quand qu'à te court après a va rire 
-    private GameObject PorteActuelle; // pour gérer les portes lorsqu'elle touche une porte
+    public Transform pointA; // First point for her movement
+    public Transform pointB; // Second point
 
-   
+    public AudioClip RireVieille; // Creepy laugh sound
+    public AudioClip SonPorteOuvre; // Door opening sound
+    public AudioClip SonFermePorte; // Door closing sound
 
+    // Flag to prevent opening/closing the door multiple times
+    private bool porteEnTrainDOuvrir = false;
 
-    public Transform pointA; // les points de base pour son déplacement
-    public Transform pointB;// le deuxième point
-   
+    private Transform destination; // Grandma's current destination (either pointA or pointB)
 
-    public AudioClip RireVieille; // son rire creepy
-
-    // public DeplacementPersonnage deplacementPersonnageScript; // Reference au script
-
-    private Transform destination; // la destination de la vieille
-
-    // Start is called before the first frame update
     void Start()
     {
-        // je vais get les components nécessaires
+        // Get the necessary components
         Animator = GetComponent<Animator>();
         Lennemi = GetComponent<NavMeshAgent>();
         AudioSource = GetComponent<AudioSource>();
 
-        destination = pointA; // on commence par le point a bien sur
-        Lennemi.SetDestination(destination.position);// je set la destination à la position du pointA
-
-        
-
-
-
+        destination = pointA; // Start by setting the destination to pointA
+        Lennemi.SetDestination(destination.position); // Set the NavMeshAgent destination to pointA
     }
 
-    // Update is called once per frame
     void Update()
     {
-
-        Animator.SetBool("Marche", true); // Active l'animation de marche dès le début
-
-        // si l'ennemi est pas loin du prochain point, j'échange les points de destination
-        if (!Lennemi.pathPending && Lennemi.remainingDistance < 0.5f)
+        // Control the walking and running animations
+        if (Lennemi.speed < 1.6f)
         {
-            destination = destination == pointA ? pointB : pointA; 
-            Lennemi.SetDestination(destination.position);
-           
-
-
-
+            Animator.SetBool("Marche", true); // Activate walking animation
+            Animator.SetBool("Course", false); // Deactivate running animation
+        }
+        else
+        {
+            Animator.SetBool("Marche", false); // Deactivate walking animation
+            Animator.SetBool("Course", true); // Activate running animation
         }
 
-
-
-
+        // Change destination if the enemy reaches the current point
+        if (!Lennemi.pathPending && Lennemi.remainingDistance < 0.5f)
+        {
+            destination = destination == pointA ? pointB : pointA; // Toggle destination
+            Lennemi.SetDestination(destination.position);
+        }
     }
 
     /*********************************************************************************************************  
-                                       GESTIONNARE DE COLLISIONS DE TYPE TRIGGER EMTER
-    ******************************************************************************************************/
+                               HANDLING TRIGGER COLLISIONS
+     ******************************************************************************************************/
 
-
-
-
-    private void OnTriggerEnter(Collider InfosCollider)
+    private void OnTriggerEnter(Collider infosCollider)
     {
-        // Si la vieille touche à la porte
-
-        if (InfosCollider.gameObject.tag == "Porte")
+        // If grandma touches the door
+        if (infosCollider.gameObject.CompareTag("Porte") && !porteEnTrainDOuvrir)
         {
-            // On parle de quelle porte?
-            PorteActuelle = InfosCollider.gameObject;
+            PorteActuelle = infosCollider.gameObject; // Identify which door it is
 
-            // La porte s'ouvre
-            Animator porteAnimator = PorteActuelle.GetComponent<Animator>();
-            if (porteAnimator != null)
-            {
-                porteAnimator.SetBool("Ouvre", true);
-                PorteActuelle.GetComponent<Collider>().enabled = false; // Désactivation du collider
-               
-            }
+            // Open the door
+            PorteActuelle.GetComponent<Animator>().SetBool("Ouvre", true);
+            AudioSource.PlayOneShot(SonPorteOuvre);
 
-            // Déclenchez la fermeture de la porte après un délai. Assez de temps pour qu'ils passent.
-            Invoke("RefermerPorte", 6f);
+            // Mark the door as opening
+            porteEnTrainDOuvrir = true;
+
+            // Close the door after 4 seconds
+            Invoke("RefermerPorte", 4f);
         }
 
-        if (InfosCollider.gameObject.CompareTag("Joueur"))
+        // If grandma touches the player
+        if (infosCollider.gameObject.CompareTag("Joueur"))
         {
-            AudioSource.PlayOneShot(RireVieille);
+            AudioSource.PlayOneShot(RireVieille); // Play the creepy laugh
         }
-
-
     }
 
-
-
-
-    private void OnTriggerStay(Collider InfosCollider)
+    private void OnTriggerStay(Collider infosCollider)
     {
-       
-        if (InfosCollider.gameObject.CompareTag("Joueur"))
+        // If the player is in the trigger area, grandma will chase the player
+        if (infosCollider.gameObject.CompareTag("Joueur"))
         {
-            //  la destination de l'ennemi pour suivre le personnage
-            destination = InfosCollider.gameObject.transform;
-            Lennemi.SetDestination(destination.position);
-            Lennemi.speed = 1.6f;
-            Animator.SetBool("Course", true); // Active l'animation de course
-       
-
-
+            // Set grandma's destination to the player's position
+            Lennemi.SetDestination(infosCollider.gameObject.transform.position);
+            Lennemi.speed = 1.6f; // Run faster when chasing the player
+            Animator.SetBool("Course", true); // Activate running animation
         }
-
-
     }
-
-
-
-
 
     private void RefermerPorte()
     {
-        // Quelle porte? l'actuelle. celle qui est touché.
-
-
+        // Close the door
         if (PorteActuelle != null)
         {
-            Animator porteAnimator = PorteActuelle.GetComponent<Animator>();
-            if (porteAnimator != null)
-            {
-                porteAnimator.SetBool("Ouvre", false);
-                PorteActuelle.GetComponent<Collider>().enabled = true; // Réactivation du collider
-            }
+            PorteActuelle.GetComponent<Animator>().SetBool("Ouvre", false); // Close door animation
+            AudioSource.PlayOneShot(SonFermePorte); // Play door closing sound
         }
+
+        // Reset the flag to allow interaction with the door again
+        porteEnTrainDOuvrir = false;
     }
 
-
-    private void OnTriggerExit(Collider InfosCollider)
+    private void OnTriggerExit(Collider infosCollider)
     {
-        if (InfosCollider.gameObject.CompareTag("Joueur"))
+        // If the player leaves the trigger area, grandma will return to her starting path
+        if (infosCollider.gameObject.CompareTag("Joueur"))
         {
-            // Appeler la méthode après un délai de 10 secondes
+            // Call the method after 10 seconds
             Invoke("RetourAuCheminInitial", 10f);
         }
     }
 
     private void RetourAuCheminInitial()
     {
-        // Remettre la vitesse à la normale
-        Lennemi.speed = 0.5f; //la vitesse redevient à la normale
+        // Reset grandma's speed to normal
+        Lennemi.speed = 0.5f;
 
-        // Désactiver l'animation de course et activer celle de marche
+        // Stop running animation and start walking animation
         Animator.SetBool("Course", false);
+        Animator.SetBool("Marche", true);
 
-        // lennemi revient à la position de départ
-        destination = pointA;
-        Lennemi.SetDestination(destination.position);
-       
+        // Set grandma's destination back to pointA
+        Lennemi.SetDestination(pointA.position);
     }
-
-
-
-
-
 }
-
