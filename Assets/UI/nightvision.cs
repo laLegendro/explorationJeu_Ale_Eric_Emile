@@ -1,118 +1,104 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.PostProcessing;
 using UnityEngine.XR;
 
-public class ControllerButtonMapper : MonoBehaviour
+public class NightVisionToggle : MonoBehaviour
 {
-    public PostProcessVolume postProcessVolume;
+    public PostProcessVolume postProcessVolume; // Reference to the PostProcessVolume
+    public bool isNightVisionOn = false; // Toggle state for Night Vision
+
     private ColorGrading colorGrading;
+    private Grain grain;
     private Vignette vignette;
-    private bool nightVisionOn = false;
     
-    // Button mappings (map controller buttons to actions)
-    private Dictionary<string, InputFeatureUsage<bool>> buttonMappings = new Dictionary<string, InputFeatureUsage<bool>>();
-    
-    private InputDevice rightController;  // Right controller
-    private InputDevice leftController;   // Left controller
+    private XRNode inputSource = XRNode.RightHand; // Set input source (RightHand by default)
 
     void Start()
     {
-        // Get the PostProcessing effects using GetSetting() for the PostProcessProfile
-        colorGrading = postProcessVolume.profile.GetSetting<ColorGrading>();
-        vignette = postProcessVolume.profile.GetSetting<Vignette>();
-
-        // Default to night vision off
-        SetNightVision(false);
-
-        // Initialize VR controllers
-        InitializeControllers();
-
-        // Set up button mappings
-        SetupButtonMappings();
-    }
-
-    // Initialize controllers
-    void InitializeControllers()
-    {
-        List<InputDevice> devices = new List<InputDevice>();
-        
-        // Get the right controller
-        InputDevices.GetDevicesAtXRNode(XRNode.RightHand, devices); 
-        if (devices.Count > 0)
+        // Get the Color Grading effect from the Post Process Profile
+        if (postProcessVolume.profile.TryGetSettings(out colorGrading))
         {
-            rightController = devices[0];
+            colorGrading.enabled.value = isNightVisionOn;
         }
 
-        // Get the left controller
-        devices.Clear();
-        InputDevices.GetDevicesAtXRNode(XRNode.LeftHand, devices); 
-        if (devices.Count > 0)
+        // Get the Grain effect
+        if (postProcessVolume.profile.TryGetSettings(out grain))
         {
-            leftController = devices[0];
+            grain.enabled.value = isNightVisionOn;
         }
-    }
 
-    // Setup button mappings
-    void SetupButtonMappings()
-    {
-        // Map actions to button presses
-        buttonMappings["NightVision"] = CommonUsages.primaryButton; // Example: "primaryButton" for NightVision toggle
+        // Get the Vignette effect
+        if (postProcessVolume.profile.TryGetSettings(out vignette))
+        {
+            vignette.enabled.value = isNightVisionOn;
+        }
     }
 
     void Update()
     {
-        // Check button presses for each controller
-        CheckButtonPress(rightController);
-        CheckButtonPress(leftController);
-    }
+        // Detect VR controller input to toggle night vision
+        InputDevice device = InputDevices.GetDeviceAtXRNode(inputSource);
 
-    void CheckButtonPress(InputDevice controller)
-    {
-        // Check if the controller is valid
-        if (controller.isValid)
+        // Example using the "primaryButton" on the controller (replace this with your preferred button)
+        bool buttonPressed;
+        if (device.TryGetFeatureValue(CommonUsages.primaryButton, out buttonPressed) && buttonPressed)
         {
-            // Loop through all button mappings to check input
-            foreach (var buttonMapping in buttonMappings)
-            {
-                bool buttonPressed = false;
-                
-                if (controller.TryGetFeatureValue(buttonMapping.Value, out buttonPressed) && buttonPressed)
-                {
-                    // Trigger the mapped action (toggle night vision in this case)
-                    if (buttonMapping.Key == "NightVision")
-                    {
-                        ToggleNightVision();
-                    }
-                }
-            }
+            ToggleNightVision();
         }
     }
 
     void ToggleNightVision()
     {
-        nightVisionOn = !nightVisionOn;
-        SetNightVision(nightVisionOn);
-    }
+        isNightVisionOn = !isNightVisionOn;
 
-    void SetNightVision(bool enabled)
-    {
-        if (enabled)
+        // Toggle post-processing effects
+        if (colorGrading != null)
         {
-            // Enable the post-processing effects for night vision
-            colorGrading.enabled.value = true;
-            vignette.enabled.value = true;
+            colorGrading.enabled.value = isNightVisionOn;
 
-            // Set specific values for night vision effect
-            colorGrading.saturation.value = -100;  // Change to greenish tint
-            vignette.intensity.value = 0.5f;       // Adjust intensity for dark edges
+            // Modify Color Grading for Night Vision (green tint, no saturation)
+            if (isNightVisionOn)
+            {
+                colorGrading.saturation.value = -100; // Remove saturation (black and white)
+                colorGrading.hueShift.value = 0.5f; // Greenish hue (night vision)
+            }
+            else
+            {
+                colorGrading.saturation.value = 0; // Reset saturation
+                colorGrading.hueShift.value = 0f; // Reset hue shift to normal
+            }
         }
-        else
+
+        if (grain != null)
         {
-            // Disable the post-processing effects for night vision
-            colorGrading.enabled.value = false;
-            vignette.enabled.value = false;
+            grain.enabled.value = isNightVisionOn;
+
+            // Add grain effect for night vision
+            if (isNightVisionOn)
+            {
+                grain.intensity.value = 0.5f; // Add grain
+            }
+            else
+            {
+                grain.intensity.value = 0f; // Remove grain
+            }
+        }
+
+        if (vignette != null)
+        {
+            vignette.enabled.value = isNightVisionOn;
+
+            // Apply vignette effect for night vision
+            if (isNightVisionOn)
+            {
+                vignette.intensity.value = 0.4f; // Darken edges
+                vignette.smoothness.value = 0.4f; // Adjust smoothness of vignette
+            }
+            else
+            {
+                vignette.intensity.value = 0f; // Remove vignette
+                vignette.smoothness.value = 1f; // Reset smoothness
+            }
         }
     }
 }
