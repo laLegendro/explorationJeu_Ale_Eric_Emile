@@ -19,9 +19,11 @@ public class scriptCamion : MonoBehaviour
     }
 
     void OnCollisionEnter(Collision infoCollision){
-        if (infoCollision.gameObject.name == "clee")
+        Debug.Log(infoCollision.gameObject.name);
+        if (infoCollision.gameObject.name == "Clee")
         {
             aClee = true;
+            infoCollision.gameObject.SetActive(false);
         }
     }
 }

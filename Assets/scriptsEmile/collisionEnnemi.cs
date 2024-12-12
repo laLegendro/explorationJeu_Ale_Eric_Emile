@@ -26,10 +26,11 @@ public class collisionEnnemi : MonoBehaviour
             // finirPartie();
         }
         
-        if (infoTrigger.name == "camion")
+        if (infoTrigger.name == "Camion")
         {
             if (infoTrigger.GetComponent<scriptCamion>().aClee == true)
             {
+                // Debug.Log("oki");
                 gagnerPartie();   
             }
         }
