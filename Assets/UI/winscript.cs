@@ -11,7 +11,7 @@ public class winscript : MonoBehaviour
   // REPLAY SI TU WIN ANYWAYS similar avec script defeat
   public void StartBtn()
     {
-        SceneManager.LoadScene("SampleScene_v2 avatar UI START");
+        SceneManager.LoadScene("sceneDebut");
     }
 
 }

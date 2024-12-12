@@ -34,10 +34,10 @@ public class collisionEnnemi : MonoBehaviour
     }
 
     public void finirPartie(){
-        SceneManager.LoadScene("SampleScene_v2 avatar UI DEFEAT");
+        SceneManager.LoadScene("sceneDefaite");
     }
 
     public void gagnerPartie(){
-        SceneManager.LoadScene("SampleScene_v2 avatar UI WIN");
+        SceneManager.LoadScene("sceneVictoire");
     }
 }

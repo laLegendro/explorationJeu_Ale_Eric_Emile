@@ -10,6 +10,6 @@ public class defeatscript : MonoBehaviour
   // LOAD LE HUB PRINCIPAL MENU
   public void StartBtn()
     {
-        SceneManager.LoadScene("SampleScene_v2 avatar UI START");
+        SceneManager.LoadScene("sceneDebut");
     }
 }
