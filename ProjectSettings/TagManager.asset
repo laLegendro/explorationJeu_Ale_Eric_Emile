@@ -25,6 +25,11 @@ TagManager:
   - QDSUITextInputField
   - QDSUIToggleCheckboxRadio
   - QDSUISection
+  - Porte
+  - Joueur
+  - Ennemi
+  - ennemiJoueur
+  - laVieille
   layers:
   - Default
   - TransparentFX
