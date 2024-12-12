@@ -26,6 +26,12 @@ public class GestionJoueur : MonoBehaviour
         AudioPersonnage = GetComponent<AudioSource>();
     }
 
+
+
+    
+
+
+
     /*********************************************************************************************************
                         GESTION DES COLLISIONS DE TYPE TRIGGER ENTER
      ******************************************************************************************************/

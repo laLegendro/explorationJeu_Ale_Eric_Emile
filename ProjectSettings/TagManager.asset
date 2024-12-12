@@ -28,6 +28,8 @@ TagManager:
   - Porte
   - Joueur
   - Ennemi
+  - ennemiJoueur
+  - laVieille
   layers:
   - Default
   - TransparentFX

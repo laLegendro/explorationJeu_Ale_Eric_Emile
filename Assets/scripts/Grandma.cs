@@ -5,7 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
-
+using UnityEngine.SceneManagement;
 public class Grandma : MonoBehaviour
 {
     private NavMeshAgent Lennemi; // The enemy (grandma)
@@ -18,11 +18,13 @@ public class Grandma : MonoBehaviour
     public Transform pointB; // Second point
 
     public AudioClip RireVieille; // Creepy laugh sound
-    public AudioClip SonPorteOuvre; // Door opening sound
-    public AudioClip SonFermePorte; // Door closing sound
+                                  //public AudioClip SonPorteOuvre; // Door opening sound
+                                  // public AudioClip SonFermePorte; // Door closing sound
 
     // Flag to prevent opening/closing the door multiple times
-    private bool porteEnTrainDOuvrir = false;
+    // private bool porteEnTrainDOuvrir = false;
+
+    private bool aDejaRit = false;
 
     private Transform destination; // Grandma's current destination (either pointA or pointB)
 
@@ -59,13 +61,26 @@ public class Grandma : MonoBehaviour
         }
     }
 
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Debug.Log("Collision detected with: " + collision.gameObject.name);
+
+        // La Vieille
+        if (collision.gameObject.CompareTag("Joueur"))
+        {
+            Debug.Log("Le joueur a été touché par la Vieille ! Redémarrage de la scène...");
+            SceneManager.LoadScene("Alejandro");
+        }
+    }
+
     /*********************************************************************************************************  
                                HANDLING TRIGGER COLLISIONS
      ******************************************************************************************************/
 
     private void OnTriggerEnter(Collider infosCollider)
     {
-        // If grandma touches the door
+       /* // If grandma touches the door
         if (infosCollider.gameObject.CompareTag("Porte") && !porteEnTrainDOuvrir)
         {
             PorteActuelle = infosCollider.gameObject; // Identify which door it is
@@ -79,12 +94,13 @@ public class Grandma : MonoBehaviour
 
             // Close the door after 4 seconds
             Invoke("RefermerPorte", 4f);
-        }
+        }*/
 
         // If grandma touches the player
-        if (infosCollider.gameObject.CompareTag("Joueur"))
+        if (infosCollider.gameObject.CompareTag("Joueur") && !aDejaRit)
         {
             AudioSource.PlayOneShot(RireVieille); // Play the creepy laugh
+            aDejaRit = false;
         }
     }
 
@@ -100,7 +116,7 @@ public class Grandma : MonoBehaviour
         }
     }
 
-    private void RefermerPorte()
+    /*private void RefermerPorte()
     {
         // Close the door
         if (PorteActuelle != null)
@@ -111,7 +127,7 @@ public class Grandma : MonoBehaviour
 
         // Reset the flag to allow interaction with the door again
         porteEnTrainDOuvrir = false;
-    }
+    }*/
 
     private void OnTriggerExit(Collider infosCollider)
     {
