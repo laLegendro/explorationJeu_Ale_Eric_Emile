@@ -18,19 +18,16 @@ public class collisionEnnemi : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider infoTrigger){
-        Debug.Log("oki general");
         
         if (infoTrigger.name == "Capsule")
         {
-            Debug.Log("oki");
-            // finirPartie();
+            finirPartie();
         }
         
         if (infoTrigger.name == "Camion")
         {
             if (infoTrigger.GetComponent<scriptCamion>().aClee == true)
             {
-                // Debug.Log("oki");
                 gagnerPartie();   
             }
         }
