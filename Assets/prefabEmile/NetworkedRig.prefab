@@ -484,7 +484,7 @@ GameObject:
   - component: {fileID: 8742298220613968746}
   m_Layer: 0
   m_Name: NetworkedRig
-  m_TagString: Untagged
+  m_TagString: Joueur
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

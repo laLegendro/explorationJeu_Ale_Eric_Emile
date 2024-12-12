@@ -18,12 +18,6 @@ public class collisionEnnemi : MonoBehaviour
     }
 
     void OnTriggerEnter(Collider infoTrigger){
-        
-        if (infoTrigger.name == "Capsule")
-        {
-            finirPartie();
-        }
-        
         if (infoTrigger.name == "Camion")
         {
             if (infoTrigger.GetComponent<scriptCamion>().aClee == true)
@@ -31,10 +25,6 @@ public class collisionEnnemi : MonoBehaviour
                 gagnerPartie();   
             }
         }
-    }
-
-    public void finirPartie(){
-        SceneManager.LoadScene("sceneDefaite");
     }
 
     public void gagnerPartie(){
