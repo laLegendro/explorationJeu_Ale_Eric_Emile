@@ -1,11 +1,9 @@
-
-
-
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AI;
 using UnityEngine.SceneManagement;
+
 public class Grandma : MonoBehaviour
 {
     private NavMeshAgent Lennemi; // The enemy (grandma)
@@ -18,11 +16,8 @@ public class Grandma : MonoBehaviour
     public Transform pointB; // Second point
 
     public AudioClip RireVieille; // Creepy laugh sound
-                                  //public AudioClip SonPorteOuvre; // Door opening sound
-                                  // public AudioClip SonFermePorte; // Door closing sound
-
-    // Flag to prevent opening/closing the door multiple times
-    // private bool porteEnTrainDOuvrir = false;
+    public AudioClip MusiqueChasse; // Chase music
+    public AudioClip HorrorAmbient; // Ambient horror music (this is already set to play on wake and loop in AudioSource)
 
     private bool aDejaRit = false;
 
@@ -34,6 +29,11 @@ public class Grandma : MonoBehaviour
         Animator = GetComponent<Animator>();
         Lennemi = GetComponent<NavMeshAgent>();
         AudioSource = GetComponent<AudioSource>();
+
+        // Ensure HorrorAmbient is playing at the start
+        AudioSource.clip = HorrorAmbient;
+        AudioSource.loop = true;
+        AudioSource.Play();
 
         destination = pointA; // Start by setting the destination to pointA
         Lennemi.SetDestination(destination.position); // Set the NavMeshAgent destination to pointA
@@ -61,7 +61,6 @@ public class Grandma : MonoBehaviour
         }
     }
 
-
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("Collision detected with: " + collision.gameObject.name);
@@ -80,27 +79,11 @@ public class Grandma : MonoBehaviour
 
     private void OnTriggerEnter(Collider infosCollider)
     {
-       /* // If grandma touches the door
-        if (infosCollider.gameObject.CompareTag("Porte") && !porteEnTrainDOuvrir)
-        {
-            PorteActuelle = infosCollider.gameObject; // Identify which door it is
-
-            // Open the door
-            PorteActuelle.GetComponent<Animator>().SetBool("Ouvre", true);
-            AudioSource.PlayOneShot(SonPorteOuvre);
-
-            // Mark the door as opening
-            porteEnTrainDOuvrir = true;
-
-            // Close the door after 4 seconds
-            Invoke("RefermerPorte", 4f);
-        }*/
-
         // If grandma touches the player
         if (infosCollider.gameObject.CompareTag("Joueur") && !aDejaRit)
         {
             AudioSource.PlayOneShot(RireVieille); // Play the creepy laugh
-            aDejaRit = false;
+            aDejaRit = true;
         }
     }
 
@@ -109,25 +92,23 @@ public class Grandma : MonoBehaviour
         // If the player is in the trigger area, grandma will chase the player
         if (infosCollider.gameObject.CompareTag("Joueur"))
         {
+            aDejaRit = false;
             // Set grandma's destination to the player's position
             Lennemi.SetDestination(infosCollider.gameObject.transform.position);
             Lennemi.speed = 1.6f; // Run faster when chasing the player
             Animator.SetBool("Course", true); // Activate running animation
+
+            // If the music is not MusiqueChasse, switch to it
+            if (AudioSource.clip != MusiqueChasse)
+            {
+                Debug.Log("Switching to chase music.");
+                AudioSource.Stop(); // Stop the current music
+                AudioSource.clip = MusiqueChasse; // Change the clip to MusiqueChasse
+                AudioSource.loop = true; // Ensure it loops
+                AudioSource.Play(); // Play the chase music
+            }
         }
     }
-
-    /*private void RefermerPorte()
-    {
-        // Close the door
-        if (PorteActuelle != null)
-        {
-            PorteActuelle.GetComponent<Animator>().SetBool("Ouvre", false); // Close door animation
-            AudioSource.PlayOneShot(SonFermePorte); // Play door closing sound
-        }
-
-        // Reset the flag to allow interaction with the door again
-        porteEnTrainDOuvrir = false;
-    }*/
 
     private void OnTriggerExit(Collider infosCollider)
     {
@@ -136,6 +117,9 @@ public class Grandma : MonoBehaviour
         {
             // Call the method after 10 seconds
             Invoke("RetourAuCheminInitial", 10f);
+           
+
+          
         }
     }
 
@@ -150,5 +134,14 @@ public class Grandma : MonoBehaviour
 
         // Set grandma's destination back to pointA
         Lennemi.SetDestination(pointA.position);
+        // Switch back to HorrorAmbient if it's not already playing
+        if (AudioSource.clip != HorrorAmbient)
+        {
+            Debug.Log("Switching back to ambient horror music.");
+            AudioSource.Stop(); // Stop the current music
+            AudioSource.clip = HorrorAmbient; // Change back to HorrorAmbient
+            AudioSource.loop = true; // Ensure it loops
+            AudioSource.Play(); // Play the ambient music
+        }
     }
 }
