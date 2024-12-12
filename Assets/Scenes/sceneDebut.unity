@@ -180,7 +180,7 @@ MonoBehaviour:
   m_text: "Utiliser vos joysticks pour vous d\xE9placer."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20e9120e2fbf59349a14931e671729b7, type: 2}
-  m_sharedMaterial: {fileID: -1646835355471682080, guid: 20e9120e2fbf59349a14931e671729b7,
+  m_sharedMaterial: {fileID: 5656708632102527022, guid: 20e9120e2fbf59349a14931e671729b7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2781,7 +2781,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &153203855
 Transform:
   m_ObjectHideFlags: 0
@@ -10747,7 +10747,7 @@ MonoBehaviour:
   m_text: "Votre survie d\xE9pendra de votre capacit\xE9 \xE0 rester discret et astucieux."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20e9120e2fbf59349a14931e671729b7, type: 2}
-  m_sharedMaterial: {fileID: -1646835355471682080, guid: 20e9120e2fbf59349a14931e671729b7,
+  m_sharedMaterial: {fileID: 5656708632102527022, guid: 20e9120e2fbf59349a14931e671729b7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -12214,7 +12214,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BACK
+  m_text: RETOUR
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: bbdcbf7f8af8670439f7dfe1e6d13a06, type: 2}
   m_sharedMaterial: {fileID: -6823364505852673212, guid: bbdcbf7f8af8670439f7dfe1e6d13a06,
@@ -13487,7 +13487,7 @@ MonoBehaviour:
   m_text: Appuyez sur [Interagir] pour prendre des objets, ouvrir des portes
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20e9120e2fbf59349a14931e671729b7, type: 2}
-  m_sharedMaterial: {fileID: -1646835355471682080, guid: 20e9120e2fbf59349a14931e671729b7,
+  m_sharedMaterial: {fileID: 5656708632102527022, guid: 20e9120e2fbf59349a14931e671729b7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -14290,7 +14290,7 @@ MonoBehaviour:
     vous chasse."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20e9120e2fbf59349a14931e671729b7, type: 2}
-  m_sharedMaterial: {fileID: -1646835355471682080, guid: 20e9120e2fbf59349a14931e671729b7,
+  m_sharedMaterial: {fileID: 5656708632102527022, guid: 20e9120e2fbf59349a14931e671729b7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -30976,7 +30976,7 @@ MonoBehaviour:
     meilleures cachettes pour survivre. "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 20e9120e2fbf59349a14931e671729b7, type: 2}
-  m_sharedMaterial: {fileID: -1646835355471682080, guid: 20e9120e2fbf59349a14931e671729b7,
+  m_sharedMaterial: {fileID: 5656708632102527022, guid: 20e9120e2fbf59349a14931e671729b7,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
