@@ -3,20 +3,46 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - SamplesInfoPanel
+  - QDSUIToggleButton
+  - QDSUIIcon
+  - QDSUITextSecondaryColor
+  - QDSUIPrimaryButton
+  - QDSUISharedThemeColor
+  - QDSUIAccentColor
+  - QDSUISecondaryButton
+  - QDSUIDestructiveButton
+  - QDSUIBorderlessButton
+  - QDSUIToggleBorderlessButton
+  - QDSUITooltip
+  - QDSUIToggleSwitch
+  - Locomotion
+  - LocoButton
+  - LocoText
+  - PassThroughButton
+  - PassThrough
+  - QDSUITextInputField
+  - QDSUIToggleCheckboxRadio
+  - QDSUISection
+  - Porte
+  - Joueur
+  - Ennemi
+  - ennemiJoueur
+  - laVieille
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - HiddenMesh
   - Water
   - UI
+  - Post Processing
   - 
   - 
   - 
-  - 
-  - 
-  - 
+  - Character
+  - MirroredCharacter
   - 
   - 
   - 

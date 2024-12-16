@@ -1,0 +1,15 @@
+fileFormatVersion: 2
+guid: bb7ae6a352a9a5d4896d4f5655d69820
+NativeFormatImporter:
+  externalObjects: {}
+  mainObjectFileID: 2100000
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 195372
+  packageName: Old Door
+  packageVersion: 1.0
+  assetPath: Assets/Old Door/Materials/clean_door_01.mat
+  uploadId: 433376
